@@ -1,0 +1,38 @@
+{% extends 'courses/base.html' %}
+{% block contact %}
+
+
+
+
+        <form action="#" method="POST" name="contactform">
+              {% csrf_token %}
+
+
+              {% for hidden in form.hidden_fields %}
+              {{ hidden }}
+              {{% endfor %}}
+
+
+              {% for field in form.visible_fields %}
+             <div class="row form-group">
+             {{ field.errors }}
+               <div class="col-lg-6 col-12">
+                 <input type="text" class="form-control" name="contact-name" placeholder="Your Name" id="name">
+                </div>
+
+            <div class="col-lg-6 col-12">
+                    <input type="email" class="form-control" name="contact-email" placeholder="Email" id="email">
+                  </div>
+
+             <div class="col-12">
+                    <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message"></textarea>
+                  </div>
+
+                  <div class="ml-lg-auto col-lg-5 col-12" style="display:grid">
+                    <input type="submit" class="form-control submit-btn" value="Send Button">
+                    <button class="btn btn-primary"> <a href="#topnav" class="nav-link" style="color:#fff" data-hover="topscroll">courses</a></button>
+                  </div>
+                </div>
+              </form>
+
+{% endblock contact %}

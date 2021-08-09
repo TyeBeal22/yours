@@ -1,0 +1,20 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
+
+{% block content %}
+    <div class="prose-lg">
+        <h1>{% trans "Start Selling! 🎉" %}</h1>
+
+        <p>Thank you for joining! Please confirm your email address.</p>
+
+        <p>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the
+            signup process. Please contact us if you do not receive it within a few minutes.{% endblocktrans %}</p>
+
+        <p>One quick note: If the email shows up in your spam folder, please move it over
+            to your inbox, as that will allow you see future emails from us 🌎</p>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,99 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>{% block title %}M code{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Modern Econ" />
+    <meta name="author" content="Tye Beal" />
+
+
+    <link rel="stylesheet" href="{%static 'css/owl.carousel.min.css' %}" />
+    <link href="{% static 'css/fontawesome-all.css' %}" rel="stylesheet" />
+    <link rel="icon" href="{% static 'images/M.png' %}" />
+          <link
+            rel="stylesheet"
+            href="{% static 'css/styles.css' %}"
+            type="text/css"
+          />
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" />
+    <link href="{% static 'css/swiper.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet" />
+    <link href="https://unpkg.com/@tailwindcss/custom-forms/dist/custom-forms.min.css" rel="stylesheet" />
+
+    <style>
+        [x-cloak] { display: none; }
+    </style>
+    {% block css %}
+    <!-- This file stores project-specific CSS -->
+    <link href="{% static 'css/project.css' %}" rel="stylesheet" />
+    {% endblock %}
+    <!-- Le javascript
+		================================================== -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    {% block javascript %}
+    <script defer src="{% static 'js/project.js' %}"></script>
+    {% endblock javascript %}
+  </head>
+
+  <body>
+
+
+        {% include "navbar.html" %}
+
+
+
+        <main style="background-image: url({% static 'images/food.png' %})">
+          <div class="max-w-7xl mx-auto">
+
+            <div class="">
+              {% block content %}
+
+              {% endblock content %}
+            </div>
+          </div>
+        </main>
+
+      <!--Main-->
+      <div class="container pt-12 md:pt-24 mx-auto flex flex-wrap flex-col md:flex-row items-center" style="background-image: url({% static 'images/food.png' %})">
+        <!--Left Col-->
+        <div class="flex flex-col w-full xl:w-2/5 justify-center lg:items-start overflow-y-hidden">
+
+
+
+
+
+        </div>
+
+        <!--Right Col-->
+        <div class="w-full xl:w-3/5 p-12 overflow-hidden">
+          <img class="mx-auto w-full md:w-4/5 transform -rotate-6 transition hover:scale-105 duration-700 ease-in-out hover:rotate-6" />
+        </div>
+
+        <div class="mx-auto md:pt-16">
+          <div class="flex w-full justify-center md:justify-start pb-24 lg:pb-0 fade-in">
+            <img src="{% static 'images/App Store.svg' %}" class="h-12 pr-12 transform hover:scale-125 duration-300 ease-in-out" />
+            <img src="{% static 'images/Play Store.svg' %}" class="h-12 transform hover:scale-125 duration-300 ease-in-out" />
+          </div>
+            </div>
+          <div class="copyright container px-4 sm:px-8 lg:grid lg:grid-cols-3">
+
+              <p class="p-small statement">Copyright © <a href="/" class="no-underline">MutationCode</a></p>
+
+          </div>
+
+
+    <script src="{% static 'js/jquery.min.js' %}"></script> <!-- jQuery for JavaScript plugins -->
+    <script src="{% static 'js/jquery.easing.min.js' %}"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="{% static 'js/swiper.min.js' %}"></script> <!-- Swiper for image and text sliders -->
+    <script src="{% static 'js/jquery.magnific-popup.js' %}"></script> <!-- Magnific Popup for lightboxes -->
+  {% block modal %}{% endblock modal %}
+	{% block inline_javascript %}
+	{# Script tags with only code, no src (defer by default) #}
+	{% endblock inline_javascript %}
+
+  </body>
+</html>

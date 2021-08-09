@@ -1,0 +1,72 @@
+   
+   
+   
+   
+   
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="/">MutationCode LLC</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                     <li class="nav-item">
+                        <a href="{% url 'discover' %}" class="nav-link"><span data-hover="Projects">Shop</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#project" class="nav-link"><span data-hover="Projects">Projects</span></a>
+                    </li>
+
+
+                  {% block post_detail_link %}
+                    {% endblock %}
+
+                    {% if request.user.is_authenticated %}
+                        <li class="nav-item">
+                          <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        </li>
+                    <li class="nav-item">
+                        <a href="{% url 'membership:profile' %}" class="nav-link"><span data-hover="Subscription">Membership</span></a>
+                    </li>
+                    
+              <li href="{% url 'profile' %}" class="nav-item">
+                <a class="nav-link">My Profile</a>
+              </li>
+              <li class="nav-item"> 
+               <a href="{% url 'user-products' %}" class="nav-link">  My Products</a>
+              </li>
+
+                    {% else %}
+
+                   <li class="nav-item">
+                        <a href="{% url 'account_login' %}" class="nav-link"><span data-hover="Login">Login</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'account_signup' %}" class="nav-link">SignUp</span></a>
+                    </li>
+
+                    {% endif %}
+                </ul>
+ 
+                <ul class="navbar-nav ml-lg-auto">
+
+                    <div class="ml-lg-4">
+                      <div class="color-mode d-lg-flex justify-content-center align-items-center">
+                        <i class="color-mode-icon"></i>
+                        Light switch
+                      </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+    </nav>

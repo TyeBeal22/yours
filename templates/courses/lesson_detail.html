@@ -1,0 +1,58 @@
+{% extends 'courses/base.html' %} {% block post_detail_link %}
+
+{% if object is not None %} {% endif %} {% endblock %} {% block content %}
+
+ <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+    <div class="py-16 flex flex-wrap">
+        <div class="flex flex-wrap w-full">
+
+
+<!--
+<div class="col-5 mx-auto embed-responsive">
+  <div class="rounded py-5">
+
+  -->
+
+
+   
+      {% if object is not None %}
+    
+
+      <iframe
+        poster="{{ object.thumbnail.url }}"
+        src="/static{{ object.video_url }}"
+        type="video/mp4"
+        allow="fullscreen"
+        width="100%"
+        height="480"
+        frameborder="0"
+        allowfullscreen
+      >
+        Sorry, your browser doesn't support embedded videos.
+      </iframe>
+      <ul style="margin-left:auto;margin-right:auto">
+        <li style="default: none">
+         <a href="{{ object.course.get_absolute_url }}">
+         {{ object.course.title }}
+         </a>
+      
+        </li>
+      </ul>
+      {% else %}
+      
+  <div class="block ml-auto mr-auto">
+      <p>To view this course you'll need to upgrade your membership</p>
+      <br />
+      <a href="{% url 'membership:select' %}"
+        ><button class="btn btn-warning">Check out memberships</button></a
+      >
+ </div>
+    
+      {% endif %}
+    
+ 
+</div>
+</div>
+
+{% endblock content %}
